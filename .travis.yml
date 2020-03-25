@@ -16,13 +16,13 @@ before_install:
   - sudo mv ./kubectl /usr/local/bin/kubectl
 
 install:
-  - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml push
+  - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
 
-#deploy:
-#  - provider: script
-#    script: bash udacity-c3-deployment/docker/publish.sh
-#    on:
-#      branch: master
+deploy:
+  - provider: script
+    script: bash udacity-c3-deployment/docker/publish.sh
+    on:
+      branch: master
 #  - provider: script
 #    script: bash udacity-c3-deployment/k8s/deploy.sh
 #    on:
