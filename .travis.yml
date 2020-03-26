@@ -20,7 +20,7 @@ install:
 
 deploy:
   - provider: script
-    script: bash udacity-c3-deployment/docker/publish.sh
+    script: "bash udacity-c3-deployment/docker/publish.sh"
     on:
       branch: master
 #  - provider: script
