@@ -1,4 +1,4 @@
-anguage: minimal
+language: minimal
 
 services: docker
 
@@ -14,16 +14,13 @@ before_install:
   - curl -LO https://storage.googleapis.com/kubernetes-release/release/$(curl -s https://storage.googleapis.com/kubernetes-release/release/stable.txt)/bin/linux/amd64/kubectl
   - chmod +x ./kubectl
   - sudo mv ./kubectl /usr/local/bin/kubectl
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+branches: 
+      only: 
+        - master
 
 install:
   - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml build --parallel
+  - docker-compose -f udacity-c3-deployment/docker/docker-compose-build.yaml push
 
-deploy:
-  - provider: script
-    script: "bash udacity-c3-deployment/docker/publish.sh"
-    on:
-      branch: master
-#  - provider: script
-#    script: bash udacity-c3-deployment/k8s/deploy.sh
-#    on:
-#      branch: master
+
