@@ -132,14 +132,6 @@ Create a PostgresSQL instance via Amazon RDS.
 
 Add the ```udagram_common``` VPC security group to your Database instance so the services can access it.
 
-### Deploy the application services
-
-Deploy and start the application and services on Kubernetes by executing:
-
-```
-./deployment/k8s/deploy_services.sh
-```
-
 ### Build the production images
 
 At first, set these variables to your environment 
@@ -155,20 +147,6 @@ AWS_REGION=__YOUR_AWS_BUCKET_REGION__
 AWS_PROFILE=__YOUR_AWS_PROFILE__
 AWS_CREDENTIALS=`cat ~/.aws/credentials`
 APP_URL=http://__YOUR_FRONTEND_SERVICE_URL__:8100
-```
-
-Replace the values by your data. `__YOUR_FRONTEND_SERVICE_URL__` can be retrieved using the command:
-
-```
-kubectl get svc
-```
-
-Add the reverseproxy URL to the file `frontend/src/environments/environment.prod.ts`
-
-You can also retrieve the reverse proxy URL by running
-
-```
-kubectl get svc
 ```
 
 Create a docker build file with the following content
