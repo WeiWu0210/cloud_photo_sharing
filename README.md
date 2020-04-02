@@ -14,6 +14,7 @@ The following tools need to be installed on your machine:
 Furthermore, you need to have:
 - an [Amazon Web Services](https://console.aws.amazon.com) account
 - a [DockerHub](https://hub.docker.com/) account
+- a [Travis](https://travis-ci.com) account
 
 ### Clone the repository
 
