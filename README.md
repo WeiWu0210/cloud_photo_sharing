@@ -119,8 +119,8 @@ https://medium.com/containermind/how-to-create-a-kubernetes-cluster-on-aws-in-fe
 
 #### Provision the infrastructure
 ```
-export KOPS_CLUSTER_NAME=wei.k8s.local
-export KOPS_STATE_STORE=s3://wei-kops-state-store
+export KOPS_CLUSTER_NAME= AWS_CLUSTER_NAME
+export KOPS_STATE_STORE= AWS_S3_BUCKET
 kops create secret --name ${KOPS_CLUSTER_NAME} sshpublickey admin -i ~/.ssh/ec2_kube.pub
 kops create cluster --node-count=2 --node-size=t3.medium --zones=us-west-1a --name=${KOPS_CLUSTER_NAME} --yes
 ```
