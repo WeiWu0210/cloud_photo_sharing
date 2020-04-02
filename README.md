@@ -78,7 +78,7 @@ Save the following configuration in the CORS configuration Editor:
 
 `Docker` is used to start the application on the local environment
 
-The variables below need to be added to your environment such as .bash_prfile:
+The variables below need to be added to your environment such as .bash_profile:
 
 ```
 export POSTGRESS_USERNAME=
@@ -134,21 +134,6 @@ Create a PostgresSQL instance via Amazon RDS.
 Add the ```udagram_common``` VPC security group to your Database instance so the services can access it.
 
 ### Build the production images
-
-At first, set these variables to your environment 
-
-```
-POSTGRESS_USERNAME=__YOUR_MASTER_USERNAME__
-POSTGRESS_PASSWORD=__YOUR_MASTER_PASSWORD__
-POSTGRESS_DB=__YOUR_INITIAL_DATABASE_NAME__
-POSTGRESS_HOST=__YOUR_AMAZON_RDS_DB_HOST__
-JWT_SECRET=__YOUR_JWT_SECRET__
-AWS_BUCKET=__YOUR_AWS_BUCKET_NAME__
-AWS_REGION=__YOUR_AWS_BUCKET_REGION__
-AWS_PROFILE=__YOUR_AWS_PROFILE__
-AWS_CREDENTIALS=`cat ~/.aws/credentials`
-APP_URL=http://__YOUR_FRONTEND_SERVICE_URL__:8100
-```
 
 Build the images by executing:
 
