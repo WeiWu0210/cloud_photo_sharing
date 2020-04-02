@@ -118,12 +118,12 @@ The application is running in a Kubernetes Cluster on AWS.
 https://medium.com/containermind/how-to-create-a-kubernetes-cluster-on-aws-in-few-minutes-89dda10354f4
 
 #### Provision the infrastructure
-
+```
 export KOPS_CLUSTER_NAME=wei.k8s.local
 export KOPS_STATE_STORE=s3://wei-kops-state-store
 kops create secret --name ${KOPS_CLUSTER_NAME} sshpublickey admin -i ~/.ssh/ec2_kube.pub
 kops create cluster --node-count=2 --node-size=t3.medium --zones=us-west-1a --name=${KOPS_CLUSTER_NAME} --yes
-
+```
 ### Create a PostgreSQL Instance
 
 The application is using `PostgreSQL` database to store the feed data.
