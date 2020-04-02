@@ -149,43 +149,16 @@ AWS_CREDENTIALS=`cat ~/.aws/credentials`
 APP_URL=http://__YOUR_FRONTEND_SERVICE_URL__:8100
 ```
 
-Create a docker build file with the following content
-
-```YAML
-version: "3"
-services:
- reverseproxy:
- build:
- context: .
- image: __YOUR_DOCKERHUB_NAME__/udagram-reverseproxy
- backend_user:
- build:
- context: ../../api-user
- image: __YOUR_DOCKERHUB_NAME__/udagram-api-user
- backend_feed:
- build:
- context: ../../api-feed 
- image: __YOUR_DOCKERHUB_NAME__/udagram-api-feed
- frontend:
- build:
- context: ../../frontend 
- args:
- - BUILD_ENV=production
- image: __YOUR_DOCKERHUB_NAME__/udagram-frontend
-```
-
-Replace ```__YOUR_DOCKERHUB_NAME__``` by your own DockerHub account.
-
 Build the images by executing:
 
 ```
-docker-compose -f __YOUR_DOCKER_BUILD_FILE__ build --parallel
+docker-compose -f docker-compose-build.yaml --parallel
 ```
 
 Push your images to your Docker Hub
 
 ```
-docker-compose -f __YOUR_DOCKER_BUILD_FILE__ push
+docker-compose -f docker-compose-build.yaml push
 ```
 
 ### Deploy the Kubernetes pods
