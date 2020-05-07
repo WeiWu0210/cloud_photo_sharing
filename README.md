@@ -1,6 +1,6 @@
 # Overview of the Project Tasks
 
-Start with the "Udagram - photo sharing" Monolith application and divide the application into smaller (micro)services. Each microservice must run in a separate Docker container. These containers (and ReplicaSets) have to be managed by using the Kubernetes cluster. Demonstrate the ability to independently scale-up, release, and deploy the project using Kubernetes, and TravisCI.
+A photo sharing application composed of smaller (micro)services. Each microservice runs in a separate Docker container. These containers (and ReplicaSets) are managed by using the Kubernetes cluster, and  are able to  be independently scaled-up, released, and deployed using Kubernetes and TravisCI.
 
 ## Getting started
 
