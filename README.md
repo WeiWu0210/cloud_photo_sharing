@@ -1,6 +1,6 @@
 # Overview of the Project Tasks
 
-A photo sharing application composed of smaller (micro)services. Each microservice runs in a separate Docker container. These containers (and ReplicaSets) are managed by using the Kubernetes cluster, and  are able to  be independently scaled-up, released, and deployed using Kubernetes and TravisCI.
+A cloud-based photo sharing application composed of smaller (micro)services. Each microservice runs in a separate Docker container. These containers (and ReplicaSets) are managed by using the Kubernetes cluster, and  are able to  be independently scaled-up, released, and deployed using Kubernetes and TravisCI.
 
 ## Getting started
 
